@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>fable-5.2-tests</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A collection of browser experiments. Test 01: Midnight BBQ, a real-time 3D charcoal grill you can cook on.">
+<meta name="theme-color" content="#0b0d14">
+<meta property="og:title" content="fable-5.2-tests">
+<meta property="og:description" content="Browser experiments. Test 01: Midnight BBQ, a real-time 3D charcoal grill you can cook on.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://thequantling.github.io/fable-5.2-tests/bbq/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230b0d14'/%3E%3Cpath d='M32 10c4 9 14 13 14 25a14 14 0 0 1-28 0c0-6 3-9 6-13 1 5 3 7 5 7 1-7-1-12 3-19z' fill='%23ff8a2a'/%3E%3Cpath d='M32 30c2 5 7 7 7 13a7 7 0 0 1-14 0c0-5 5-7 7-13z' fill='%23ffe08a'/%3E%3C/svg%3E">
+<style>
+  :root { color-scheme: dark; --ink: #f4ede4; --dim: rgba(244,237,228,.6); --line: rgba(255,226,190,.14); --ember: #ff9a3c; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  html { background: #050508; }
+  body { background: radial-gradient(120% 80% at 50% 0%, #1a100b 0%, #0a0a0f 52%, #050508 100%) fixed; color: var(--ink);
+    font: 400 16px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: clamp(40px, 9vw, 96px) 20px 64px; }
+  header p.kicker { margin: 0 0 10px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--ember); }
+  h1 { margin: 0; font: 600 clamp(32px, 6.4vw, 56px)/1.05 ui-serif, Georgia, "Times New Roman", serif; letter-spacing: -.01em; }
+  header p.lede { margin: 16px 0 0; max-width: 56ch; color: var(--dim); }
+  .grid { display: grid; gap: 22px; margin-top: clamp(32px, 6vw, 56px); }
+  a.card { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); color: inherit; text-decoration: none; overflow: hidden;
+    border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.025); transition: border-color .25s, transform .25s, box-shadow .25s; }
+  a.card:hover, a.card:focus-visible { border-color: rgba(255,154,60,.55); transform: translateY(-2px); box-shadow: 0 18px 60px -24px rgba(255,120,30,.45); outline: none; }
+  .card img { display: block; width: 100%; height: 100%; min-height: 220px; object-fit: cover; background: #0b0d14; }
+  .card .txt { padding: clamp(18px, 3vw, 30px); display: flex; flex-direction: column; gap: 10px; }
+  .card .n { font: 600 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .14em; color: var(--ember); }
+  .card h2 { margin: 0; font: 600 26px/1.15 ui-serif, Georgia, serif; }
+  .card p { margin: 0; color: var(--dim); font-size: 15px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .tags span { font-size: 12px; padding: 3px 9px; border-radius: 99px; border: 1px solid var(--line); color: var(--dim); }
+  .go { margin-top: auto; padding-top: 12px; font-weight: 600; color: var(--ember); }
+  footer { margin-top: 44px; color: var(--dim); font-size: 13px; }
+  footer a { color: var(--ink); text-decoration-color: var(--line); text-underline-offset: 3px; }
+  @media (max-width: 720px) { a.card { grid-template-columns: 1fr; } .card img { min-height: 0; aspect-ratio: 1200 / 630; height: auto; } }
+  @media (prefers-reduced-motion: reduce) { a.card { transition: none; } a.card:hover { transform: none; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="kicker">Browser experiments</p>
+    <h1>fable-5.2-tests</h1>
+    <p class="lede">One folder per test. Every test is a static page with no build step: open it and it runs.</p>
+  </header>
+
+  <div class="grid">
+    <a class="card" href="./bbq/">
+      <img src="./bbq/assets/og.jpg" width="1200" height="630" alt="A kettle barbecue at night: flames over glowing coals, burgers and sausages on the grate, a table of food behind it.">
+      <div class="txt">
+        <span class="n">TEST 01</span>
+        <h2>Midnight BBQ</h2>
+        <p>A charcoal kettle on a garden deck at night, rendered live. Orbit the scene, drag burgers and sausages onto the grate, flip them, watch them sear, and stoke the coals.</p>
+        <div class="tags"><span>three.js</span><span>WebGL 2</span><span>ray-marched fire</span><span>touch + mouse</span></div>
+        <span class="go">Light the grill →</span>
+      </div>
+    </a>
+  </div>
+
+  <footer>Source on <a href="https://github.com/thequantling/fable-5.2-tests">GitHub</a>.</footer>
+</main>
+</body>
+</html>
