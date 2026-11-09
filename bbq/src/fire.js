@@ -127,7 +127,9 @@ void mainUv(inout vec2 uv) {
     // whatever stands in the hot air itself (the food, the bars) stays sharp: only what is beyond it shimmers
     vec3 e = uCamPos + rd * far;
     float beyond = dot(e.xz, e.xz) < 0.09 ? smoothstep(0.02, 0.3, e.y - ${f3(GRILL.grateY)}) : 1.0;
-    uv += n * (uHaze * beyond * min(len, 0.45) * (1.0 - smoothstep(0.95, 1.9, p.y)) / rl);
+    // hot air bends light by an angle, so what stands just behind it hardly moves: the shimmer grows with the distance beyond
+    float lever = clamp((far - (t.x + len * 0.5)) / far, 0.0, 1.0);
+    uv += n * (uHaze * beyond * lever * min(len, 0.45) * (1.0 - smoothstep(0.95, 1.9, p.y)) / rl);
   }
 }`}
 
